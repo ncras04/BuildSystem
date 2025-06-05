@@ -1,26 +1,19 @@
 using System.IO;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BuildingGrid
 {
-    public int[,] grid;
+    public Building[,] grid;
 
     public int gridSize = 20;
     public int unitSize = 1;
     public BuildingGrid()
     {
-        grid = new int[gridSize, gridSize];
-
-        for (int y = 0; y < gridSize; y++)
-        {
-            for (int x = 0; x < gridSize; x++)
-            {
-                grid[y, x] = gridSize * y + x;
-            }
-        }
+        grid = new Building[gridSize, gridSize];
     }
 
-    public bool SelectPiece(Vector3 _clickedPoint, ref Vector2Int _selectedGridPiece, out int _tileInfo)
+    public bool SelectPiece(Vector3 _clickedPoint, ref Vector2Int _selectedGridPiece, out Building _tileInfo)
     {
         if ((_clickedPoint.x > 0) && (_clickedPoint.x < gridSize * unitSize) &&
             (_clickedPoint.z > 0) && (_clickedPoint.z < gridSize * unitSize))
@@ -32,7 +25,7 @@ public class BuildingGrid
             return true;
         }
 
-        _tileInfo = -1;
+        _tileInfo = null;
         return false;
     }
 }

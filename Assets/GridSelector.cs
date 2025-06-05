@@ -20,8 +20,8 @@ public class GridSelector : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    grid.SelectPiece(hit.point, ref selectedGridPiece, out int _);
-                    selectedGridTile.position = new Vector3(selectedGridPiece.x + 0.5f, 0.0f, selectedGridPiece.y + 0.5f);
+                    grid.SelectPiece(hit.point, ref selectedGridPiece, out Building _);
+                    selectedGridTile.position = new Vector3(selectedGridPiece.x, 0.0f, selectedGridPiece.y);
                 }
             }
         }
