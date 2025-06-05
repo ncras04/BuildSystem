@@ -10,7 +10,6 @@ public class GridPlaneEffect : MonoBehaviour
     {
         render = GetComponent<MeshRenderer>();
     }
-    // Update is called once per frame
     void Update()
     {
         render.material.SetVector("_CursorPosition", Cursor.position);

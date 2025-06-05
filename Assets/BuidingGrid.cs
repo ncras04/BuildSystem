@@ -28,4 +28,11 @@ public class BuildingGrid
         _tileInfo = null;
         return false;
     }
+
+    public bool PlacePiece(Building _piece, Vector2Int _selectedGridPiece)
+    {
+        _piece.PlaceBuilding();
+        grid[_selectedGridPiece.x, _selectedGridPiece.y] = _piece;
+        return true;
+    }
 }
